@@ -26,14 +26,14 @@ body {
 }
 
 :root {
-  --color-primary: #d82246;
-  --color-primary-variant: #eb647f;
-  --color-bg-1: #f1c40f;
-  --color-bg-2: #f8d548;
+  --color-primary: #790000;
+  --color-primary-variant: #aa2f47;
+  --color-bg-1: #790000;
+  --color-bg-2: #f0c353;
   --color-bg-3: white;
-  --color-bg-4: #f3ff44;
+  --color-bg-4: #dfa30b;
   --color-dark: #231f20;
-  --color-font: #e5625e;
+  --color-font: #aa2f47;
   --color-white: hsl(0, 0%, 90%);
 
   --container-width-lg: 88%;
@@ -237,7 +237,7 @@ header {
 .header-title {
   font-size: 3rem;
   line-height: 1.3;
-  color: var(--color-font);
+  color: white;
 }
 
 .header-subtitle {
