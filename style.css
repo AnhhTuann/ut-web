@@ -464,6 +464,14 @@ header {
   width: 45rem;
 }
 
+.gallery__content {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
 .swiper-wrapper {
   margin-top: 5rem;
   height: 37rem;
