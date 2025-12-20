@@ -364,6 +364,10 @@ header {
   border-radius: 1rem;
 }
 
+.about__left {
+  padding-top: 10rem;
+}
+
 .about__image {
   position: relative;
 }
