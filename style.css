@@ -638,7 +638,7 @@ header {
   color: var(--color-bg-3);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
   .container {
     width: var(--container-width-md);
     position: relative;
