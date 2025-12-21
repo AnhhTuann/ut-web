@@ -539,7 +539,8 @@ body {
   margin-bottom: 1rem;
 }
 .footer__logo img {
-  width: 10rem;
+  width: 12rem;
+  padding-right: 10px;
 }
 .footer__data {
   display: grid;
