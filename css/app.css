@@ -537,11 +537,7 @@ body {
   margin-bottom: 1rem;
 }
 .footer__logo img {
-  width: 5rem;
-}
-.footer__logo .small-logo {
-  width: 8rem;
-  padding-top: 0.25rem;
+  width: 10rem;
 }
 .footer__data {
   display: grid;
@@ -669,11 +665,17 @@ body.dark-theme .enjoy__img {
 body.dark-theme .enjoy__bg {
   background-color: hsl(0, 0%, 14%);
 }
+body.dark-theme .enjoy__title {
+  color: #dfa30b;
+}
 body.dark-theme .mission__img {
   filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.6));
 }
 body.dark-theme .mission__bg {
   background-color: hsl(0, 0%, 14%);
+}
+body.dark-theme .mission__title {
+  color: #dfa30b;
 }
 body.dark-theme {
   /*========= About styles =========*/

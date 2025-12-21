@@ -76,6 +76,9 @@ body.dark-theme {
     &__bg {
       background-color: $container-color;
     }
+    &__title {
+      color: $first-color;
+    }
   }
 
   .mission {
@@ -84,6 +87,9 @@ body.dark-theme {
     }
     &__bg {
       background-color: $container-color;
+    }
+    &__title {
+      color: $first-color;
     }
   }
 
