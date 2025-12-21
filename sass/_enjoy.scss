@@ -9,14 +9,10 @@
     position: relative;
     padding-block: 1.5rem 2.5rem;
     text-align: center;
+    padding: 1rem;
     // background: gray;
   }
-  &__img {
-    width: 120px;
-    margin: 0 auto 0.75rem;
-    filter: $shadow-img;
-    transition: transform 0.4s;
-  }
+
   &__bg {
     width: 100%;
     height: 100%;
@@ -30,12 +26,14 @@
     transition: background-color 0.4s;
   }
   &__title {
+    color: $first-color;
     font-size: $h1-font-size;
     font-family: $second-font;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
   }
   &__subtitle {
-    font-size: $small-font-size;
+    font-size: $normal-font-size;
   }
   &__card:hover &__img {
     transform: translateY(-0.3rem);

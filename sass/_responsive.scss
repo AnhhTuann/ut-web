@@ -14,6 +14,14 @@
       right: -4rem;
     }
   }
+
+  .mission {
+    &__container {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
   .enjoy {
     &__container {
       grid-template-columns: 220px;
@@ -60,6 +68,13 @@
     }
   }
 
+  .mission {
+    &__container {
+      flex-direction: row;
+      gap: 4rem;
+    }
+  }
+
   .join {
     &__description {
       width: 350px;
@@ -95,6 +110,12 @@
 
     &__fruit {
       left: 10rem;
+    }
+  }
+
+  .mission {
+    &__container {
+      gap: 6rem;
     }
   }
 
@@ -210,7 +231,7 @@
 
   .enjoy {
     &__container {
-      grid-template-columns: repeat(3, 278px);
+      grid-template-columns: repeat(4, 278px);
       column-gap: 2.5rem;
     }
     &__card {

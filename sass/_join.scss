@@ -20,6 +20,10 @@
     left: 0;
     backdrop-filter: blur(8px);
   }
+  &__description {
+    font-size: $small-font-size;
+    margin-top: 1rem;
+  }
   &__bg {
     position: absolute;
     width: 100%;

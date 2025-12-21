@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 html {
   box-sizing: border-box;
 }
@@ -62,8 +62,8 @@ html {
 body,
 input,
 button {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.938rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
 }
 
 body {
@@ -101,8 +101,8 @@ h4 {
 }
 
 .section__title {
-  font-size: 2rem;
-  font-family: "Cherry Bomb One", cursive;
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -161,7 +161,7 @@ h4 {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .header {
@@ -187,8 +187,8 @@ body {
   color: hsl(140, 4%, 12%);
 }
 .nav__logo {
-  font-family: "Cherry Bomb One", cursive;
-  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
   column-gap: 0.25rem;
 }
 .nav__logo img {
@@ -284,8 +284,8 @@ body {
   text-align: center;
 }
 .home__title {
-  font-size: 3rem;
-  font-family: "Cherry Bomb One", cursive;
+  font-size: 4rem;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 1rem;
 }
 .home__description {
@@ -321,12 +321,7 @@ body {
   position: relative;
   padding-block: 1.5rem 2.5rem;
   text-align: center;
-}
-.enjoy__img {
-  width: 120px;
-  margin: 0 auto 0.75rem;
-  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
-  transition: transform 0.4s;
+  padding: 1rem;
 }
 .enjoy__bg {
   width: 100%;
@@ -341,12 +336,14 @@ body {
   transition: background-color 0.4s;
 }
 .enjoy__title {
-  font-size: 1.5rem;
-  font-family: "Cherry Bomb One", cursive;
-  margin-bottom: 0.25rem;
+  color: #790000;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
 }
 .enjoy__subtitle {
-  font-size: 0.813rem;
+  font-size: 1.25rem;
 }
 .enjoy__card:hover .enjoy__img {
   transform: translateY(-0.3rem);
@@ -420,17 +417,17 @@ body {
   transition: transform 0.4s;
 }
 .popular__title {
-  font-size: 1.25rem;
-  font-family: "Cherry Bomb One", cursive;
+  font-size: 1.75rem;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 0.25rem;
 }
 .popular__subtitle {
   display: block;
-  font-size: 0.813rem;
+  font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 .popular__price {
-  font-size: 0.938rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 .popular__button {
@@ -470,6 +467,10 @@ body {
   top: 0;
   left: 0;
   backdrop-filter: blur(8px);
+}
+.join__description {
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 .join__bg {
   position: absolute;
@@ -530,13 +531,17 @@ body {
   display: inline-flex;
   align-items: center;
   column-gap: 0.25rem;
-  font-size: 1.5rem;
-  font-family: "Cherry Bomb One", cursive;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
   color: hsl(140, 4%, 12%);
   margin-bottom: 1rem;
 }
 .footer__logo img {
-  width: 1.25rem;
+  width: 5rem;
+}
+.footer__logo .small-logo {
+  width: 8rem;
+  padding-top: 0.25rem;
 }
 .footer__data {
   display: grid;
@@ -544,7 +549,7 @@ body {
   gap: 3rem;
 }
 .footer__title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -596,7 +601,7 @@ body {
   display: block;
   margin-top: 7rem;
   text-align: center;
-  font-size: 0.813rem;
+  font-size: 1rem;
   color: hsl(140, 4%, 64%);
 }
 
@@ -733,6 +738,10 @@ body.dark-theme .scrollup {
   .home__branch {
     right: -4rem;
   }
+  .mission__container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
   .enjoy__container {
     grid-template-columns: 220px;
   }
@@ -758,6 +767,10 @@ body.dark-theme .scrollup {
   .about__container {
     grid-template-columns: 370px;
     justify-content: center;
+  }
+  .mission__container {
+    flex-direction: row;
+    gap: 4rem;
   }
   .join__description {
     width: 350px;
@@ -787,6 +800,9 @@ body.dark-theme .scrollup {
   }
   .home__fruit {
     left: 10rem;
+  }
+  .mission__container {
+    gap: 6rem;
   }
   .enjoy__container {
     grid-template-columns: repeat(2, 250px);
@@ -867,7 +883,7 @@ body.dark-theme .scrollup {
     right: -5rem;
   }
   .enjoy__container {
-    grid-template-columns: repeat(3, 278px);
+    grid-template-columns: repeat(4, 278px);
     column-gap: 2.5rem;
   }
   .enjoy__card {
@@ -989,6 +1005,42 @@ body.dark-theme .scrollup {
   .dark-theme .nav__menu {
     box-shadow: none;
   }
+}
+.mission__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.mission__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #790000;
+}
+.mission__bg {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.mission__card {
+  position: relative;
+  padding-block: 1.5rem 2.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+.mission__subtitle {
+  font-size: 1.25rem;
+}
+.mission__card:hover .mission__img {
+  transform: translateY(-0.3rem);
 }
 
 /*# sourceMappingURL=app.css.map */
