@@ -78,6 +78,15 @@ body.dark-theme {
     }
   }
 
+  .mission {
+    &__img {
+      filter: $shadow-img;
+    }
+    &__bg {
+      background-color: $container-color;
+    }
+  }
+
   /*========= About styles =========*/
   .about {
     &__fruit,
