@@ -1,0 +1,106 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: $body-font;
+  font-size: $normal-font-size;
+}
+
+body {
+  background-color: $body-color;
+  color: $text-color;
+  transition: background-color 0.4s;
+}
+
+button,
+input {
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $title-color;
+  font-weight: $font-medium;
+  line-height: 100%;
+}
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: $big-font-size;
+  font-family: $second-font;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+.button {
+  display: inline-block;
+  background-color: $first-color;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  color: $white-color;
+  font-weight: $font-semi-bold;
+  transition: box-shadow 0.4s;
+  &:hover {
+    box-shadow: 0 8px 24px rgba(140, 40%, 48%, 0.3);
+  }
+}
+
+// SCROLL BAR
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 85%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 65%);
+  &:hover {
+    background-color: hsl(0, 0%, 55%);
+  }
+}
+
+//SCROLL UP
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: $body-color;
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+  display: inline-flex;
+  padding: 8px;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  color: $title-color;
+  z-index: $z-tooltip;
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
