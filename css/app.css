@@ -1,0 +1,994 @@
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+input {
+  line-height: normal;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== Colors ==========*/
+/*Color mode HSL(hue, saturation, lightness)*/
+/*========== Font and typography ==========*/
+/*.5rem = 8px | 1rem = 16px ...*/
+/*========== Font weight ==========*/
+/*========== z index ==========*/
+/*========== Responsive typography ==========*/
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.938rem;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(140, 4%, 40%);
+  transition: background-color 0.4s;
+}
+
+button,
+input {
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(140, 4%, 12%);
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  font-size: 2rem;
+  font-family: "Cherry Bomb One", cursive;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+.button {
+  display: inline-block;
+  background-color: #790000;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  transition: box-shadow 0.4s;
+}
+.button:hover {
+  box-shadow: 0 8px 24px rgba(140, 102, 122.4, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 85%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 65%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 55%);
+}
+
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+  display: inline-flex;
+  padding: 8px;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  color: hsl(140, 4%, 12%);
+  z-index: 10;
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+}
+.scrollup:hover {
+  transform: translateY(-0.5rem);
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 100;
+  transition: box-shadow 0.4s, background-color 0.4s;
+}
+
+.nav {
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo, .nav__toggle, .nav__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(140, 4%, 12%);
+}
+.nav__logo {
+  font-family: "Cherry Bomb One", cursive;
+  font-size: 1rem;
+  column-gap: 0.25rem;
+}
+.nav__logo img {
+  width: 5rem;
+}
+.nav__logo .small-logo {
+  width: 10rem;
+  padding-top: 0.25rem;
+}
+.nav__toggle, .nav__close {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 2.5rem;
+}
+.nav__link {
+  color: hsl(140, 4%, 12%);
+  font-weight: 600;
+  transition: color 0.4s;
+}
+.nav__link:hover {
+  color: #790000;
+}
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+.nav__img-1, .nav__img-2 {
+  filter: invert(1);
+  position: absolute;
+}
+.nav__img-1 {
+  width: 150px;
+  top: -2.5rem;
+  left: -3.5rem;
+  rotate: 180deg;
+}
+.nav__img-2 {
+  width: 50px;
+  right: 2.5rem;
+  bottom: 2.5rem;
+}
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: hsl(0, 0%, 100%);
+    width: 100%;
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+    padding-block: 4.5rem;
+    transition: top 0.4s;
+  }
+}
+.shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+}
+
+.show-menu {
+  top: 0;
+}
+
+.active-link {
+  color: #790000;
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  color: hsl(140, 4%, 12%);
+  cursor: pointer;
+}
+
+.home {
+  position: relative;
+}
+.home__container {
+  padding-top: 2.5rem;
+  row-gap: 2rem;
+}
+.home__data {
+  position: relative;
+  text-align: center;
+}
+.home__title {
+  font-size: 3rem;
+  font-family: "Cherry Bomb One", cursive;
+  margin-bottom: 1rem;
+}
+.home__description {
+  margin-bottom: 2rem;
+}
+.home__fruit, .home__branch {
+  filter: invert(1);
+  position: absolute;
+}
+.home__fruit {
+  width: 40px;
+  top: 6.75rem;
+  left: 1rem;
+}
+.home__img {
+  width: 320px;
+  justify-self: center;
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
+}
+.home__branch {
+  width: 120px;
+  right: -3rem;
+  bottom: 15rem;
+}
+
+.enjoy__container {
+  padding-top: 2rem;
+  grid-template-columns: 240px;
+  justify-content: center;
+  row-gap: 2.5rem;
+}
+.enjoy__card {
+  position: relative;
+  padding-block: 1.5rem 2.5rem;
+  text-align: center;
+}
+.enjoy__img {
+  width: 120px;
+  margin: 0 auto 0.75rem;
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
+  transition: transform 0.4s;
+}
+.enjoy__bg {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: skewY(4deg);
+  transition: background-color 0.4s;
+}
+.enjoy__title {
+  font-size: 1.5rem;
+  font-family: "Cherry Bomb One", cursive;
+  margin-bottom: 0.25rem;
+}
+.enjoy__subtitle {
+  font-size: 0.813rem;
+}
+.enjoy__card:hover .enjoy__img {
+  transform: translateY(-0.3rem);
+}
+
+.about {
+  position: relative;
+}
+.about__container {
+  row-gap: 2rem;
+}
+.about__data {
+  position: relative;
+  text-align: center;
+}
+.about__description {
+  margin-bottom: 2rem;
+}
+.about__fruit, .about__branch {
+  filter: invert(1);
+  position: absolute;
+}
+.about__fruit {
+  width: 40px;
+  bottom: 2rem;
+  right: 1rem;
+}
+.about__img {
+  width: 320px;
+  justify-self: center;
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
+}
+.about__branch {
+  width: 120px;
+  rotate: 60deg;
+  left: -3.5rem;
+  bottom: 15rem;
+}
+
+.popular__container {
+  padding-top: 6rem;
+  grid-template-columns: 250px;
+  justify-content: center;
+  row-gap: 6rem;
+}
+.popular__card {
+  position: relative;
+  padding-block: 6.25rem 3rem;
+  text-align: center;
+}
+.popular__bg {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: skewY(4deg);
+  transition: background-color 0.4s;
+}
+.popular__img {
+  width: 150px;
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0.75rem;
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
+  transition: transform 0.4s;
+}
+.popular__title {
+  font-size: 1.25rem;
+  font-family: "Cherry Bomb One", cursive;
+  margin-bottom: 0.25rem;
+}
+.popular__subtitle {
+  display: block;
+  font-size: 0.813rem;
+  margin-bottom: 0.75rem;
+}
+.popular__price {
+  font-size: 0.938rem;
+  font-weight: 600;
+}
+.popular__button {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  font-weight: initial;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  cursor: pointer;
+}
+.popular__card:hover .popular__img {
+  transform: translateY(-0.3rem);
+}
+
+.join__container {
+  position: relative;
+  padding-bottom: 4rem;
+}
+.join__content {
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  row-gap: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.join__content::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+}
+.join__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.join__data, .join__form {
+  z-index: 5;
+}
+.join__data .join__title, .join__description {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+.join__form {
+  display: grid;
+  row-gap: 0.75rem;
+}
+.join__input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4rem;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(140, 4%, 12%);
+  transition: background-color 0.4s;
+}
+.join__input::placeholder {
+  color: hsl(140, 4%, 40%);
+}
+.join__button {
+  cursor: pointer;
+}
+.join__leaf-1, .join__leaf-2 {
+  position: absolute;
+  width: 80px;
+}
+.join__leaf-1 {
+  top: -2.5rem;
+  left: 0.75rem;
+  rotate: 135deg;
+}
+.join__leaf-2 {
+  right: 1.5rem;
+  bottom: 1rem;
+  rotate: 15deg;
+}
+
+.footer {
+  padding-block: 3rem 2rem;
+  overflow: hidden;
+}
+.footer__container {
+  position: relative;
+  row-gap: 3rem;
+}
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  font-size: 1.5rem;
+  font-family: "Cherry Bomb One", cursive;
+  color: hsl(140, 4%, 12%);
+  margin-bottom: 1rem;
+}
+.footer__logo img {
+  width: 1.25rem;
+}
+.footer__data {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 3rem;
+}
+.footer__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.footer__links {
+  display: grid;
+  row-gap: 0.75rem;
+}
+.footer__link {
+  color: hsl(140, 4%, 40%);
+  transition: color 0.4s;
+}
+.footer__link:hover {
+  color: #790000;
+}
+.footer__social {
+  display: flex;
+  column-gap: 1rem;
+}
+.footer__social-link {
+  font-size: 1.25rem;
+  color: #790000;
+  transition: transform 0.4s;
+}
+.footer__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+.footer__fruit, .footer__branch-1, .footer__branch-2 {
+  filter: invert(1);
+  position: absolute;
+}
+.footer__fruit {
+  width: 40px;
+  bottom: -2rem;
+  right: 2rem;
+}
+.footer__branch-1 {
+  width: 120px;
+  right: -3rem;
+  top: 0;
+  rotate: -90deg;
+}
+.footer__branch-2 {
+  width: 120px;
+  left: -5rem;
+  bottom: -10rem;
+  rotate: 75deg;
+}
+.footer__copy {
+  display: block;
+  margin-top: 7rem;
+  text-align: center;
+  font-size: 0.813rem;
+  color: hsl(140, 4%, 64%);
+}
+
+body.dark-theme {
+  /*========= Dark mode variables =========*/
+  /*========= Global styles =========*/
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(140, 4%, 70%);
+}
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4 {
+  color: hsl(140, 4%, 90%);
+}
+body.dark-theme {
+  /*========= Header styles =========*/
+}
+body.dark-theme .header {
+  background-color: hsl(0, 0%, 10%);
+}
+body.dark-theme .nav__logo, body.dark-theme .nav__toggle, body.dark-theme .nav__close {
+  color: hsl(140, 4%, 90%);
+}
+body.dark-theme .nav__menu {
+  background-color: hsl(0, 0%, 14%);
+}
+body.dark-theme .nav__img-1, body.dark-theme .nav__img-2 {
+  filter: initial;
+}
+body.dark-theme .nav__link {
+  color: hsl(140, 4%, 90%);
+}
+body.dark-theme .nav__link:hover {
+  color: #dfa30b;
+}
+@media screen and (max-width: 1150px) {
+  body.dark-theme {
+    background-color: hsl(0, 0%, 10%);
+  }
+}
+body.dark-theme .active-link {
+  color: #dfa30b;
+}
+body.dark-theme .change-theme {
+  font-size: 1.25rem;
+  color: hsl(140, 4%, 90%);
+  cursor: pointer;
+}
+body.dark-theme {
+  /*========= Home styles =========*/
+}
+body.dark-theme .home__fruit, body.dark-theme .home__branch {
+  filter: initial;
+}
+body.dark-theme .home__img {
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.6));
+}
+body.dark-theme {
+  /*========= Enjoy styles =========*/
+}
+body.dark-theme .enjoy__img {
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.6));
+}
+body.dark-theme .enjoy__bg {
+  background-color: hsl(0, 0%, 14%);
+}
+body.dark-theme {
+  /*========= About styles =========*/
+}
+body.dark-theme .about__fruit, body.dark-theme .about__branch {
+  filter: initial;
+}
+body.dark-theme .about__img {
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.6));
+}
+body.dark-theme {
+  /*========= Popular styles =========*/
+}
+body.dark-theme .popular__bg {
+  background-color: hsl(0, 0%, 14%);
+}
+body.dark-theme .popular__img {
+  filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.6));
+}
+body.dark-theme {
+  /*========= Footer styles =========*/
+}
+body.dark-theme .footer__logo {
+  color: hsl(140, 4%, 90%);
+}
+body.dark-theme .footer__link {
+  color: hsl(140, 4%, 70%);
+}
+body.dark-theme .footer__link:hover {
+  color: #dfa30b;
+}
+body.dark-theme .footer__social-link {
+  color: #dfa30b;
+}
+body.dark-theme .footer__fruit, body.dark-theme .footer__branch-1, body.dark-theme .footer__branch-2 {
+  filter: initial;
+}
+body.dark-theme .scrollup {
+  background-color: hsl(0, 0%, 14%);
+  color: hsl(140, 4%, 90%);
+}
+
+.dark-theme:is(.shadow-header, .nav__menu, .scrollup) {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.3);
+}
+
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(0, 0%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 30%);
+}
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 40%);
+}
+
+@media screen and (max-width: 300px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .home__title {
+    font-size: 2.5rem;
+  }
+  .home__fruit {
+    top: 5.5rem;
+  }
+  .home__branch {
+    right: -4rem;
+  }
+  .enjoy__container {
+    grid-template-columns: 220px;
+  }
+  .popular__container {
+    grid-template-columns: 220px;
+  }
+  .about__branch {
+    bottom: 12rem;
+  }
+  .join__content {
+    padding: 2rem 1rem;
+  }
+  .footer__data {
+    grid-template-columns: max-content;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .home__container {
+    grid-template-columns: 370px;
+    justify-content: center;
+  }
+  .about__container {
+    grid-template-columns: 370px;
+    justify-content: center;
+  }
+  .join__description {
+    width: 350px;
+    margin: 0 auto;
+  }
+  .join__form {
+    background-color: hsl(0, 0%, 100%);
+    padding: 0.5rem;
+    border-radius: 4rem;
+    grid-template-columns: 1fr max-content;
+    transition: background-color 0.4s;
+  }
+  .join__input {
+    padding: 1.25rem 1rem;
+  }
+  .footer__data {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+@media screen and (min-width: 768px) {
+  .home__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+  .home__data {
+    text-align: initial;
+  }
+  .home__fruit {
+    left: 10rem;
+  }
+  .enjoy__container {
+    grid-template-columns: repeat(2, 250px);
+  }
+  .about__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+  .about__img {
+    order: -1;
+  }
+  .home__data,
+  .about__data,
+  .about__data .section__title {
+    text-align: initial;
+  }
+  .popular__container {
+    grid-template-columns: repeat(2, 250px);
+  }
+  .join__form {
+    width: 600px;
+    justify-self: center;
+  }
+  .footer__data {
+    grid-template-columns: repeat(4, max-content);
+  }
+}
+@media screen and (min-width: 1150px) {
+  .section__title {
+    font-size: 3rem;
+  }
+  .container {
+    margin-inline: auto;
+  }
+  .section {
+    padding-block: 7rem 2rem;
+  }
+  .nav {
+    height: c alc(5.5rem);
+    column-gap: 4rem;
+  }
+  .nav__close, .nav__toggle, .nav__img-1, .nav__img-2 {
+    display: none;
+  }
+  .nav__logo {
+    font-size: 1.25rem;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  .home__container {
+    grid-template-columns: 470px 600px;
+    padding-top: 3.5rem;
+  }
+  .home__fruit {
+    width: 70px;
+    left: 19rem;
+    top: 12rem;
+  }
+  .home__title {
+    margin-bottom: 1.5rem;
+    font-size: 5.5rem;
+  }
+  .home__description {
+    padding-right: 5rem;
+    margin-bottom: 3rem;
+  }
+  .home__img {
+    width: 600px;
+  }
+  .home__branch {
+    width: 200px;
+    bottom: 0;
+    right: -5rem;
+  }
+  .enjoy__container {
+    grid-template-columns: repeat(3, 278px);
+    column-gap: 2.5rem;
+  }
+  .enjoy__card {
+    padding-block: 1.5rem 3rem;
+  }
+  .enjoy__title {
+    font-size: calc(1.5rem + 4px);
+  }
+  .enjoy__subtitle {
+    font-size: 0.875rem;
+  }
+  .enjoy__img {
+    width: 150px;
+  }
+  .about__container {
+    grid-template-columns: 600px 400px;
+    column-gap: 5.5rem;
+  }
+  .about__data .section__title {
+    margin-bottom: 1.5rem;
+  }
+  .about__description {
+    margin-bottom: 3.5rem;
+  }
+  .about__fruit {
+    width: 70px;
+    right: 5rem;
+  }
+  .about__img {
+    width: 600px;
+  }
+  .about__branch {
+    width: 200px;
+    bottom: 0;
+  }
+  .popular__container {
+    grid-template-columns: repeat(3, 270px);
+    gap: 8rem 3rem;
+    padding-top: 8rem;
+  }
+  .popular__card {
+    padding-block: 8rem 3rem;
+  }
+  .popular__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .popular__subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  .popular__img {
+    width: 180px;
+  }
+  .popular__button {
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+  .join__content {
+    padding-block: 4rem;
+    border-radius: 3.5rem;
+  }
+  .join__leaf-1, .join__leaf-2 {
+    width: 100px;
+  }
+  .join__leaf-1 {
+    left: 4rem;
+  }
+  .join__leaf-2 {
+    right: 6rem;
+  }
+  .footer {
+    position: relative;
+    padding-block: 5rem 3rem;
+  }
+  .footer__container {
+    position: initial;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+  .footer__logo {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer__data {
+    column-gap: 4.5rem;
+  }
+  .footer__title {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+  .footer__social {
+    column-gap: 1.25rem;
+  }
+  .footer__social-link {
+    font-size: 1.5rem;
+  }
+  .footer__fruit {
+    width: 70px;
+    bottom: 5rem;
+    right: 35%;
+  }
+  .footer__branch-1 {
+    width: 200px;
+    top: 7rem;
+    right: -2rem;
+  }
+  .footer__branch-2 {
+    width: 200px;
+    left: 20%;
+    bottom: -4rem;
+  }
+  .scrollup {
+    right: 3rem;
+  }
+  .dark-theme .nav__list {
+    background-color: hsl(0, 0%, 10%);
+  }
+  .dark-theme .nav__menu {
+    box-shadow: none;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

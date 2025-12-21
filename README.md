@@ -1,1 +1,1 @@
-# photography-portfolio
+# simple-sample-web-project
