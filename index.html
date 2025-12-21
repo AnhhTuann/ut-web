@@ -2,270 +2,290 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kỳ Việt Creative</title>
-
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-
-    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/app.css.map" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">
-          <img src="img/logo.png " alt="" /> Kỳ Việt Creative
+    <nav>
+      <div class="container nav__container">
+        <a href="index.html" class="nav__logo"
+          ><img
+            class="nav__logo1"
+            src="../images/logo1.png
+            "
+            alt="Nav Logo"
+          />
+          <img
+            class="nav__logo2"
+            src="../images/logo2.png
+            "
+            alt="Nav Logo"
+          />
         </a>
+        <ul class="nav__links">
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#about">Về chúng tôi</a></li>
+          <li><a href="#gallery">Sản phẩm</a></li>
+          <li><a href="#exhibitions">Triển lãm</a></li>
+        </ul>
+        <ul class="nav__socials">
+          <li>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/" target="_blank"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </li>
+        </ul>
+        <button class="nav__toggle-btn" id="nav__toggle-open">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <button class="nav__toggle-btn" id="nav__toggle-close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </nav>
 
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">Trang chủ</a>
+    <header>
+      <div class="container header__container">
+        <div class="header__left">
+          <div class="header__image-bg"></div>
+          <div class="header__image-lg">
+            <img src="../images/header.jpg" alt="Header Image" />
+          </div>
+          <div class="header__image-sm">
+            <img src="../images/header.jpg" alt="Header Image" />
+          </div>
+        </div>
+        <div class="header__right">
+          <div class="header__head">
+            <div class="empty header__empty"></div>
+          </div>
+          <h1 class="header-title">Công ty trách nhiệm hữu hạn</h1>
+          <h2 class="header-subtitle">Kỳ Việt Creative</h2>
+          <p class="header-text">
+            Chúng tôi tin rằng lịch sử không chỉ để ghi nhớ, mà còn để sống lại
+            qua từng ván chơi. Mỗi sản phẩm là sự giao thoa giữa giá trị văn hoá
+            Việt Nam và tư duy sáng tạo hiện đại, giúp người chơi vừa giải trí
+            vừa tự hào về cội nguồn dân tộc.
+          </p>
+          <a href="mailto:kyvietcreative@gmail.com" class="header__btn-md"
+            >Trò chuyện</a
+          >
+        </div>
+        <div></div>
+      </div>
+    </header>
+    <div class="header__frames">
+      <div class="header__frame">
+        <img src="./images/frame1.jpg" alt="Header Frame One" />
+      </div>
+      <div class="header__frame">
+        <img src="./images/frame2.jpg" alt="Header Frame Two" />
+      </div>
+    </div>
+    <a href="mailto:kyvietcreative@gmail.com" class="contact__btn header__btn">
+      <p>Liên hệ</p></a
+    >
+
+    <section id="about">
+      <div class="container about__container">
+        <h2 class="about__title">Về chúng tôi</h2>
+
+        <div class="about__left">
+          <div class="about__image">
+            <div class="about__image-bg"></div>
+            <div class="about__image-lg">
+              <img src="../images/about.jpg" alt="About Anh Tuan" />
+            </div>
+            <div class="about__image-sm">
+              <img src="../images/about.jpg" alt="About Anh Tuan" />
+            </div>
+          </div>
+        </div>
+        <div class="about__right">
+          <div class="empty about__empty"></div>
+          <ul class="about__list">
+            <li>
+              <h4 class="about__list-title">Sứ mệnh</h4>
+              <p>
+                Mang lịch sử và văn hoá Việt Nam đến gần giới trẻ thông qua trò
+                chơi, biến việc học thành hành trình trải nghiệm, khám phá và tự
+                hào về cội nguồn dân tộc.
+              </p>
             </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">Về chúng tôi</a>
+            <li>
+              <h4 class="about__list-title">Tầm nhìn</h4>
+              <p>
+                Trở thành studio hàng đầu trong lĩnh vực thiết kế board game
+                Việt Nam, mang đến những trò chơi vừa sáng tạo, vừa giúp lan tỏa
+                giá trị văn hoá Việt đến giới trẻ.
+              </p>
             </li>
-            <li class="nav__item">
-              <a href="#popular" class="nav__link">Phổ biến</a>
-            </li>
-            <li class="nav__item">
-              <a href="#join" class="nav__link">Tham gia</a>
+            <li>
+              <h4 class="about__list-title">Giá trị cốt lõi</h4>
+              <ol class="about__sublist">
+                <li>
+                  <h5 class="about__sublist-title">Sáng tạo</h5>
+                  <p>
+                    Đổi mới cách kể chuyện lịch sử, biến tri thức thành trải
+                    nghiệm gần gũi.
+                  </p>
+                </li>
+
+                <li>
+                  <h5 class="about__sublist-title">Giáo dục</h5>
+                  <p>
+                    Gắn kết kiến thức lịch sử – địa lý – văn hóa với trò chơi.
+                  </p>
+                </li>
+                <li>
+                  <h5 class="about__sublist-title">Tự hào dân tộc</h5>
+                  <p>Khơi dậy niềm yêu nước và tự hào về lịch sử Việt Nam.</p>
+                </li>
+                <li>
+                  <h5 class="about__sublist-title">Kết nối</h5>
+                  <p>
+                    Gắn kết người chơi, thế hệ trẻ và quá khứ dân tộc thông qua
+                    trò chơi tương tác.
+                  </p>
+                </li>
+              </ol>
             </li>
           </ul>
-
-          <!-- Close button -->
-          <div class="nav__close" id="nav-close">
-            <i class="ri-close-line"></i>
-          </div>
-
-          <img src="img/branch-2.png" alt="img" class="nav__img-1" />
-          <img src="img/fruit-line-1.png" alt="" class="nav__img-2" />
         </div>
+      </div>
+    </section>
 
-        <div class="nav__buttons">
-          <!-- Theme button -->
-          <i class="ri-moon-line change-theme" id="theme-button"></i>
-          <!-- Toggle button -->
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-apps-2-line"></i>
-          </div>
+    <section id="gallery">
+      <div class="container gallery__container swiper mySwiper">
+        <div class="gallery__head">
+          <h2 class="gallery__title">Sản phẩm</h2>
+          <div class="empty gallery__empty"></div>
         </div>
-      </nav>
-    </header>
-
-    <!--==================== MAIN ====================-->
-    <main class="main">
-      <!--==================== HOME ====================-->
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__data">
-            <h1 class="home__title">
-              Công ty <br />
-              Kỳ Việt <br />Creative <br />
-            </h1>
-
-            <p class="home__description">
-              Chúng tôi tin rằng lịch sử không chỉ để ghi nhớ, mà còn để sống
-              lại qua từng ván chơi. Mỗi sản phẩm là sự giao thoa giữa giá trị
-              văn hoá Việt Nam và tư duy sáng tạo hiện đại, giúp người chơi vừa
-              giải trí vừa tự hào về cội nguồn dân tộc.
-            </p>
-
-            <a href="#" class="button"> Order Fruit Now </a>
-          </div>
-
-          <img src="img/header.jpg" alt="image" class="home__img" />
-        </div>
-
-        <img src="img/branch-2.png" alt="image" class="home__branch" />
-      </section>
-
-      <!--==================== ENJOY ====================-->
-      <section class="enjoy section">
-        <h2 class="section__title">Học mà chơi</h2>
-        <div class="enjoy__container container grid">
-          <article class="enjoy__card">
-            <div class="enjoy__bg"></div>
-
-            <img src="img/enjoy-1.png" alt="img" class="enjoy__img" />
-            <h3 class="enjoy__title">Healthy</h3>
-            <span class="enjoy__subtitle">Tropical Fruit</span>
-          </article>
-
-          <article class="enjoy__card">
-            <div class="enjoy__bg"></div>
-
-            <img src="img/enjoy-2.png" alt="img" class="enjoy__img" />
-            <h3 class="enjoy__title">Delicious</h3>
-            <span class="enjoy__subtitle">Field Fruit</span>
-          </article>
-
-          <article class="enjoy__card">
-            <div class="enjoy__bg"></div>
-
-            <img src="img/enjoy-3.png" alt="img" class="enjoy__img" />
-            <h3 class="enjoy__title">Organic</h3>
-            <span class="enjoy__subtitle">Tropical Fruit</span>
-          </article>
-        </div>
-      </section>
-
-      <!--==================== ABOUT US ====================-->
-      <section class="about section" id="about">
-        <div class="about__container container grid">
-          <div class="about__data">
-            <h2 class="section__title">Chúng tôi <br /></h2>
-            <p class="about__description">
-              Mang lịch sử và văn hoá Việt Nam đến gần giới trẻ thông qua trò
-              chơi, biến việc học thành hành trình trải nghiệm, khám phá và tự
-              hào về cội nguồn dân tộc.
-            </p>
-            <p class="about__description">
-              Mang lịch sử và văn hoá Việt Nam đến gần giới trẻ thông qua trò
-              chơi, biến việc học thành hành trình trải nghiệm, khám phá và tự
-              hào về cội nguồn dân tộc.
-            </p>
-            <a href="#" class="button">Know More</a>
-            <img src="img/fruit-line-1.png" alt="image" class="about__fruit" />
-          </div>
-          <img src="img/about-fruits.png" alt="image" class="about__img" />
-        </div>
-        <img src="img/branch-1.png" alt="image" class="about__branch" />
-      </section>
-
-      <!--==================== POPULAR ====================-->
-      <section class="popular section" id="popular">
-        <h2 class="section__title">Popular Fruits</h2>
-        <div class="popular__container container grid">
-          <article class="popular__card">
-            <div class="popular__bg"></div>
-            <img src="img/popular-1.png" alt="image" class="popular__img" />
-            <h3 class="popular__title">Apple</h3>
-            <span class="popular__subtitle">Organic Fruit</span>
-            <h3 class="popular__price">$4.00</h3>
-            <button class="popular__button button">
-              <i class="ri-add-line"></i>
-            </button>
-          </article>
-
-          <article class="popular__card">
-            <div class="popular__bg"></div>
-            <img src="img/popular-2.png" alt="image" class="popular__img" />
-            <h3 class="popular__title">Watermelon</h3>
-            <span class="popular__subtitle">Organic Fruit</span>
-            <h3 class="popular__price">$7.00</h3>
-            <button class="popular__button button">
-              <i class="ri-add-line"></i>
-            </button>
-          </article>
-
-          <article class="popular__card">
-            <div class="popular__bg"></div>
-            <img src="img/popular-3.png" alt="image" class="popular__img" />
-            <h3 class="popular__title">Pineapple</h3>
-            <span class="popular__subtitle">Organic Fruit</span>
-            <h3 class="popular__price">$5.00</h3>
-            <button class="popular__button button">
-              <i class="ri-add-line"></i>
-            </button>
-          </article>
-
-          <article class="popular__card">
-            <div class="popular__bg"></div>
-            <img src="img/popular-4.png" alt="image" class="popular__img" />
-            <h3 class="popular__title">Banana</h3>
-            <span class="popular__subtitle">Organic Fruit</span>
-            <h3 class="popular__price">$3.00</h3>
-            <button class="popular__button button">
-              <i class="ri-add-line"></i>
-            </button>
-          </article>
-
-          <article class="popular__card">
-            <div class="popular__bg"></div>
-            <img src="img/popular-5.png" alt="image" class="popular__img" />
-            <h3 class="popular__title">Strawberry</h3>
-            <span class="popular__subtitle">Organic Fruit</span>
-            <h3 class="popular__price">$8.00</h3>
-            <button class="popular__button button">
-              <i class="ri-add-line"></i>
-            </button>
-          </article>
-
-          <article class="popular__card">
-            <div class="popular__bg"></div>
-            <img src="img/popular-6.png" alt="image" class="popular__img" />
-            <h3 class="popular__title">Mango</h3>
-            <span class="popular__subtitle">Organic Fruit</span>
-            <h3 class="popular__price">$7.00</h3>
-            <button class="popular__button button">
-              <i class="ri-add-line"></i>
-            </button>
-          </article>
-        </div>
-      </section>
-
-      <!--==================== JOIN US ====================-->
-      <section class="join section" id="join">
-        <div class="join__container container grid">
-          <div class="join__content grid">
-            <div class="join__data">
-              <h2 class="section__title">
-                Receive The <br />
-                Best Fruits
-              </h2>
-
-              <p class="join__description">
-                Get up to date with the latest fruit harvests and information
-                from us.
-              </p>
-            </div>
-
-            <form action="" class="join__form">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                class="join__input"
-              />
-              <button class="button join__button">Subscribe Now</button>
-            </form>
-
-            <img src="img/join-bg.png" alt="image" class="join__bg" />
-          </div>
-
-          <img src="img/leaf.png" alt="image" class="join__leaf-1" />
-          <img src="img/leaf.png" alt="image" class="join__leaf-2" />
-        </div>
-      </section>
-    </main>
-
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-      <div class="footer__container container grid">
-        <div>
-          <a href="#" class="footer__logo">
-            <img src="img/logo.png" alt="image" /> Fruit
-          </a>
-
-          <p class="footer__description">
-            Eat healthy , choose <br />
-            the best fruits.
+        <div class="gallery__content">
+          <p>
+            “BINH LƯỢC VIỆT” Binh Lược Việt là trò chơi chiến thuật theo lượt,
+            nơi người chơi đồng hành cùng bốn vị anh hùng dân tộc: Trần Hưng
+            Đạo, Trần Quang Khải, Lê Thánh Tông và Nguyễn Huệ. Lấy cảm hứng từ
+            cơ chế boardgame quen thuộc, trò chơi kết hợp yếu tố lịch sử, thẻ
+            chiến thuật và thử thách kiến thức để tạo nên trải nghiệm vừa giải
+            trí vừa học hỏi. Người chơi sẽ mua địa danh, xây dựng doanh trại và
+            vận dụng mưu lược để vượt qua đối thủ và giành chiến thắng.
+          </p>
+          <p>
+            Người chơi lần lượt thảy xúc xắc và di chuyển con vật đại diện trên
+            bàn chơi gồm 40 ô Khi đi vào ô địa danh trống, người chơi có quyền
+            mua hoặc nâng cấp doanh trại; trong vòng đầu chỉ được mua cấp 1, từ
+            vòng 2 trở đi có thể mua cấp 2 hoặc 3 nếu đủ tiền. Khi đi vào ô Cơ
+            Hội hoặc Khí Vận, người chơi rút thẻ tương ứng để nhận các sự kiện
+            bất ngờ hoặc trả lời câu hỏi lịch sử nhằm giành thẻ Chiến Công. Nếu
+            đi vào Ô Nhà Lao, người chơi phải vào nhà lao. Trò chơi tiếp tục
+            theo chiều kim đồng hồ, người chơi sẽ cạnh tranh thu tiền từ doanh
+            trại đối thủ, nâng cấp quân đội, rút thẻ và vận dụng mưu lược. Trò
+            chơi kết thúc khi các đối thủ phá sản, hoặc khi một người đạt 5 thẻ
+            Chiến Công hoặc sở hữu 4 doanh trại hoàn chỉnh, trở thành người
+            chiến thắng.
           </p>
         </div>
+        <div class="swiper-wrapper">
+          <article class="swiper-slide">
+            <img src="../images/gallery1.jpg" />
+          </article>
+          <article class="swiper-slide">
+            <img src="../images/gallery2.jpg" />
+          </article>
+          <article class="swiper-slide">
+            <img src="../images/gallery3.jpg" />
+          </article>
+          <article class="swiper-slide">
+            <img src="../images/gallery4.jpg" />
+          </article>
+          <article class="swiper-slide">
+            <img src="../images/gallery5.jpg" />
+          </article>
+          <article class="swiper-slide">
+            <img src="../images/gallery6.jpg" />
+          </article>
+          <article class="swiper-slide">
+            <img src="../images/gallery7.jpg" />
+          </article>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section id="exhibitions">
+      <div class="container exhibitions__container">
+        <h2 class="exhibitions__title">Triển lãm</h2>
+        <div class="empty exhibitions__empty"></div>
+        <div class="exhibitions__head">
+          <p class="exhibitions__text">
+            Đại Việt đang trong thời kỳ Loạn Lạc Phân Tranh, cần một Thánh Quân
+            Thống Nhất. Bốn vị tướng tài là Trần Hưng Đạo, Trần Quang Khải, Lê
+            Thánh Tông, và Nguyễn Huệ tranh tài bằng cách xây dựng căn cứ, chiêu
+            mộ quân đội, và lập chiến công trên bản đồ Đại Việt. <br />
+            Người chơi chiến thắng là người đầu tiên kiểm soát được các vùng đất
+            chiến lược quan trọng nhất và tích lũy được tài nguyên/binh lực lớn
+            nhất, qua đó trở thành Vị Vua Thống Nhất của Đại Việt.
+          </p>
+
+          <a
+            href="mailto:kyvietcreative@gmail.com"
+            class="contact__btn exhibitions__btn"
+          >
+            <p>Liên hệ</p></a
+          >
+        </div>
+        <div class="exhibitions__gallery">
+          <article><img src="../images/ev.jpg" /></article>
+          <article><img src="../images/e1.jpg" /></article>
+          <article><img src="../images/e2.jpg" /></article>
+          <article><img src="../images/eh.jpg" /></article>
+          <article><img src="../images/e3.jpg" /></article>
+          <article><img src="../images/e4.jpg" /></article>
+          <article><img src="../images/e5.jpg" /></article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div class="footer_grid">
+          <a href="#" class="footer__logo">
+            <img src="images/logo1.png" alt="image" /> Kỳ Việt Creative
+          </a>
+          <p class="footer__description">Vừa học <br />Vừa chơi</p>
+        </div>
         <div class="footer__data grid">
-          <div>
+          <div class="footer__info">
             <h3 class="footer__title">Company</h3>
             <ul class="footer__links">
               <li><a href="#" class="footer__link">FAQs</a></li>
@@ -292,51 +312,28 @@
             </ul>
           </div>
 
-          <div>
+          <div class="">
             <h3 class="footer__title">Social Media</h3>
-            <div class="footer__social">
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                class="footer__social-link"
-              >
-                <i class="ri-facebook-circle-line"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                class="footer__social-link"
-              >
-                <i class="ri-instagram-line"></i>
-              </a>
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                class="footer__social-link"
-              >
-                <i class="ri-youtube-line"></i>
-              </a>
+            <div class="footer__social social__grid">
+              <a href="https://twitter.com/" target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://facebook.com/" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://instagram.com/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </div>
           </div>
         </div>
-        <img src="img/fruit-line-3.png" alt="image" class="footer__fruit" />
-        <img src="img/branch-1.png" alt="image" class="footer__branch-1" />
-        <img src="img/branch-2.png" alt="image" class="footer__branch-2" />
       </div>
       <span class="footer__copy"
-        >&copy; 2022 Fruit Shop. All rights reserved.</span
+        >&copy; 2025 Kỳ Việt Creative. All rights reserved.</span
       >
     </footer>
 
-    <!--========== SCROLL UP ==========-->
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="ri-arrow-up-s-line"></i>
-    </a>
-
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src="./scripts/scrollreveal.min.js"></script>
-
-    <!--=============== MAIN JS ===============-->
-    <script src="./scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
