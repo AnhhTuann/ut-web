@@ -304,6 +304,7 @@ body {
   width: 320px;
   justify-self: center;
   filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
+  border-radius: 10px;
 }
 .home__branch {
   width: 120px;
@@ -375,6 +376,7 @@ body {
   width: 320px;
   justify-self: center;
   filter: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
+  border-radius: 10px;
 }
 .about__branch {
   width: 120px;
