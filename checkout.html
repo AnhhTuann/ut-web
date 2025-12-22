@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán - Kỳ Việt Creative</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/app.css.map" />
+    <style></style>
+  </head>
+  <body>
+    <section class="checkout">
+      <div class="checkout__container container">
+        <h2 class="section__title checkout__title">Xác nhận đơn hàng</h2>
+
+        <div class="checkout__grid">
+          <div class="checkout__form">
+            <h3>Thông tin giao hàng</h3>
+            <div class="form__group">
+              <label>Họ và tên</label>
+              <input
+                type="text"
+                id="cus-name"
+                placeholder="Nguyễn Văn A"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label>Số điện thoại</label>
+              <input
+                type="tel"
+                id="cus-phone"
+                placeholder="0901234567"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label>Địa chỉ nhận hàng</label>
+              <input
+                type="text"
+                id="cus-address"
+                placeholder="Số nhà, tên đường..."
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label>Ghi chú</label>
+              <input
+                type="text"
+                id="cus-note"
+                placeholder="Ví dụ: Giao giờ hành chính"
+              />
+            </div>
+          </div>
+
+          <div class="checkout__summary">
+            <h3>Đơn hàng của bạn</h3>
+            <div id="checkout-items"></div>
+            <div
+              class="summary__total"
+              style="margin-top: 20px; font-size: 1.2rem; font-weight: bold"
+            >
+              <span>Tổng tiền: </span>
+              <span id="checkout-total">0</span> VND
+            </div>
+            <button class="btn-order" onclick="placeOrder()">
+              XÁC NHẬN ĐẶT HÀNG
+            </button>
+            <a
+              href="index.html"
+              style="
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+                color: #f0c353;
+              "
+              >Quay lại mua sắm</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../scripts/checkout.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+  </body>
+</html>

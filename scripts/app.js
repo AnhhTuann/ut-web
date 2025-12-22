@@ -239,3 +239,11 @@ window.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", saveAndRefresh);
+
+window.goToCheckout = function () {
+  if (cart.length === 0) {
+    alert("Giỏ hàng của bạn đang trống!");
+    return;
+  }
+  window.location.href = "checkout.html";
+};
