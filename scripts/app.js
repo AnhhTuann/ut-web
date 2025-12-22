@@ -330,7 +330,7 @@ if (modalAddBtn) {
       // 2. Hiệu ứng phản hồi trên nút
       const originalText = modalAddBtn.innerText;
       modalAddBtn.innerText = "✓ Đã thêm vào giỏ";
-      modalAddBtn.style.backgroundColor = "#28a745"; // Đổi sang xanh lá
+      modalAddBtn.style.backgroundColor = "#dfa30b"; // Đổi sang vàng
 
       // 3. Hiệu ứng bay (Lấy ảnh từ Modal bay về giỏ hàng trên Nav)
       const modalImg = document.getElementById("modalImg");

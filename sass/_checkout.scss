@@ -2,16 +2,17 @@
   background-color: hsl(0, 0%, 14%);
   &__container {
     padding: 50px 0;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
   }
   &__title {
     color: $first-color;
+    font-size: 1.5rem;
   }
   &__grid {
     display: grid;
-    grid-template-columns: 2fr 1.5fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
   &__form,
@@ -20,6 +21,7 @@
     padding: 2rem;
     border-radius: 1rem;
     color: $white-color;
+    margin: 1rem;
     & h3,
     label {
       margin-bottom: 1.5rem;
@@ -28,7 +30,7 @@
   }
   &__form {
     background: #ffffff;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 1rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     & h3 {
@@ -83,7 +85,7 @@
   justify-content: space-between;
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
+  padding-bottom: 1rem;
 }
 
 .btn-order {
