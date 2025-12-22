@@ -103,6 +103,14 @@
 
 /* ================= TABLETS (min-width: 768px) ================= */
 @media screen and (min-width: 768px) {
+  .nav {
+    &__logo {
+      font-size: 1.5rem;
+      .small-logo {
+        width: 10rem;
+      }
+    }
+  }
   .home {
     &__container {
       grid-template-columns: repeat(2, 1fr);
@@ -147,6 +155,7 @@
     &__form {
       width: 500px;
       justify-self: center;
+      gap: 1rem;
     }
   }
 

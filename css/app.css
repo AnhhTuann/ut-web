@@ -196,7 +196,7 @@ body {
   width: 5rem;
 }
 .nav__logo .small-logo {
-  width: 10rem;
+  width: 7rem;
   padding-top: 0.25rem;
 }
 .nav__toggle, .nav__close {
@@ -935,6 +935,12 @@ body.dark-theme .scrollup {
 }
 /* ================= TABLETS (min-width: 768px) ================= */
 @media screen and (min-width: 768px) {
+  .nav__logo {
+    font-size: 1.5rem;
+  }
+  .nav__logo .small-logo {
+    width: 10rem;
+  }
   .home__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -967,6 +973,7 @@ body.dark-theme .scrollup {
   .join__form {
     width: 500px;
     justify-self: center;
+    gap: 1rem;
   }
   .footer__data {
     grid-template-columns: repeat(4, max-content);
