@@ -1112,6 +1112,8 @@ body.dark-theme .scrollup {
   .footer__container {
     /* Logo một bên, Data một bên */
     justify-content: space-between;
+    grid-template-columns: repeat(2, max-content);
+    gap: 3rem;
   }
   .footer__data {
     column-gap: 4.5rem;
