@@ -58,6 +58,22 @@
     right: 1rem;
     bottom: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    &:hover {
+      background-color: #a00000;
+      transform: translateY(-2px); /* Nhích nhẹ lên trên */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    &:active {
+      transform: translateY(0); /* Trở về vị trí cũ */
+      background-color: #600000;
+    }
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
   }
   &__card:hover &__img {
     transform: translateY(-0.3rem);

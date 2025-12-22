@@ -110,38 +110,132 @@ sr.reveal(`.enjoy__card , .popular__card`, { interval: 100 });
 sr.reveal(`.about__data`, { origin: "right" });
 sr.reveal(`.about__img`, { origin: "left" });
 
-/*=============== Add to Fly ===============*/
-function flyToCart(buttonElement) {
-  const cartIcon = document.querySelector(".cart-icon-container");
-  const productImg = buttonElement.parentElement.querySelector(".product-img");
+/*=============== Add to cart ===============*/
+/*=============== KHỞI TẠO ===============*/
+let cart = JSON.parse(localStorage.getItem("kyVietCart")) || [];
 
-  // Tạo một bản sao của ảnh sản phẩm
-  const flyingImg = productImg.cloneNode();
-  flyingImg.classList.add("fly-item");
-  document.body.appendChild(flyingImg);
+// 1. Hàm bật/tắt Modal (Sửa lỗi not defined)
+window.toggleCart = function () {
+  const modal = document.getElementById("cart-modal");
+  if (modal) {
+    modal.style.display = modal.style.display === "block" ? "none" : "block";
+    if (modal.style.display === "block") renderCartItems();
+  }
+};
 
-  // Lấy vị trí của ảnh gốc và giỏ hàng
-  const rect = productImg.getBoundingClientRect();
-  const cartRect = cartIcon.getBoundingClientRect();
+// 2. Lắng nghe sự kiện click thêm sản phẩm
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".popular__button");
+  if (!btn) return;
 
-  // Đặt vị trí ban đầu cho ảnh bay
-  flyingImg.style.left = `${rect.left}px`;
-  flyingImg.style.top = `${rect.top}px`;
+  const card = btn.closest(".popular__card");
+  const productInfo = {
+    id: btn.dataset.id,
+    name: btn.dataset.name,
+    price: parseInt(card.querySelector(".popular__price").dataset.price),
+    img: card.querySelector(".popular__img").src,
+    quantity: 1,
+  };
 
-  // Thực hiện bay sau 10ms (để trình duyệt kịp nhận vị trí đầu)
-  setTimeout(() => {
-    flyingImg.style.left = `${cartRect.left + 15}px`;
-    flyingImg.style.top = `${cartRect.top + 15}px`;
-    flyingImg.style.width = `10px`;
-    flyingImg.style.height = `10px`;
-    flyingImg.style.opacity = `0.5`;
-  }, 10);
+  addToCart(productInfo);
 
-  // Xóa ảnh sau khi bay xong
-  setTimeout(() => {
-    flyingImg.remove();
-    // Hiệu ứng rung nhẹ cho giỏ hàng
-    cartIcon.style.transform = "scale(1.2)";
-    setTimeout(() => (cartIcon.style.transform = "scale(1)"), 200);
-  }, 800);
+  // Hiệu ứng bay
+  const cartIconNav = document.querySelector("#cart-icon-nav");
+  if (cartIconNav) {
+    flyToCart(card.querySelector(".popular__img"), cartIconNav);
+  }
+});
+
+function addToCart(item) {
+  const existing = cart.find((i) => i.id === item.id);
+  existing ? existing.quantity++ : cart.push(item);
+  saveAndRefresh();
 }
+
+// 3. Hiệu ứng Fly to Cart
+function flyToCart(imgToClone, cartTarget) {
+  const clone = imgToClone.cloneNode();
+  const start = imgToClone.getBoundingClientRect();
+  const end = cartTarget.getBoundingClientRect();
+
+  Object.assign(clone.style, {
+    position: "fixed",
+    left: `${start.left}px`,
+    top: `${start.top}px`,
+    width: `${start.width}px`,
+    height: `${start.height}px`,
+  });
+  clone.classList.add("flying-img");
+  document.body.appendChild(clone);
+
+  setTimeout(() => {
+    Object.assign(clone.style, {
+      left: `${end.left}px`,
+      top: `${end.top}px`,
+      width: "20px",
+      height: "20px",
+      opacity: "0",
+    });
+  }, 50);
+
+  clone.addEventListener("transitionend", () => clone.remove());
+}
+
+function saveAndRefresh() {
+  localStorage.setItem("kyVietCart", JSON.stringify(cart));
+  const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const countBadge = document.getElementById("cart-count");
+  if (countBadge) countBadge.innerText = total;
+}
+
+function renderCartItems() {
+  const container = document.getElementById("cart-items-container");
+  container.innerHTML = cart
+    .map(
+      (item, index) => `
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid #eee;">
+            <span>${item.name} x ${item.quantity}</span>
+            <span>${(item.price * item.quantity).toLocaleString()} VND</span>
+            <button onclick="removeItem(${index})" style="color:red; border:none; background:none; cursor:pointer;">Xóa</button>
+        </div>
+    `
+    )
+    .join("");
+
+  const totalMoney = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  document.getElementById("total-price").innerText =
+    totalMoney.toLocaleString();
+}
+
+window.removeItem = (index) => {
+  cart.splice(index, 1);
+  saveAndRefresh();
+  renderCartItems();
+};
+
+/*=============== SỬA LỖI CLASSLIST OF NULL ===============*/
+const navSections = document.querySelectorAll("section[id]");
+window.addEventListener("scroll", () => {
+  const scrollY = window.pageYOffset;
+  navSections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute("id"),
+      sectionsClass = document.querySelector(
+        '.nav__menu a[href*="' + sectionId + '"]'
+      );
+
+    if (sectionsClass) {
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        sectionsClass.classList.add("active-link");
+      } else {
+        sectionsClass.classList.remove("active-link");
+      }
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", saveAndRefresh);

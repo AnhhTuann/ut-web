@@ -82,6 +82,12 @@ body.dark-theme {
     }
   }
 
+  .cart-modal {
+    &__content {
+      background-color: $container-color;
+    }
+  }
+
   .mission {
     &__img {
       filter: $shadow-img;

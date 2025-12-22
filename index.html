@@ -26,8 +26,7 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">
-          <img src="img/logo.png " alt="" />
-          <img class="small-logo" src="img/logo2.png" alt="" />
+          <img src="img/logo.png" alt="Kỳ Việt Logo" />
         </a>
 
         <div class="nav__menu" id="nav-menu">
@@ -45,51 +44,50 @@
               <a href="#join" class="nav__link">Tham gia</a>
             </li>
           </ul>
-
-          <!-- Close button -->
           <div class="nav__close" id="nav-close">
             <i class="ri-close-line"></i>
           </div>
-
-          <img src="img/branch-2.png" alt="img" class="nav__img-1" />
-          <img src="img/fruit-line-1.png" alt="" class="nav__img-2" />
         </div>
 
         <div class="nav__buttons">
-          <div class="nav-icons">
-            <div class="cart-icon" onclick="toggleCart()">
-              <i class="ri-shopping-cart-line"></i>
-              <span id="cart-count">0</span>
-            </div>
+          <div
+            class="cart-icon"
+            onclick="toggleCart()"
+            style="position: relative; cursor: pointer"
+          >
+            <i class="ri-shopping-bag-line"></i>
+            <span id="cart-count">0</span>
           </div>
-
-          <div id="cart-modal" class="cart-modal">
-            <div class="cart-content">
-              <h3>
-                Giỏ hàng của bạn
-                <span
-                  onclick="toggleCart()"
-                  style="cursor: pointer; float: right"
-                  >&times;</span
-                >
-              </h3>
-              <ul id="cart-items"></ul>
-              <div class="cart-footer">
-                <p>Tổng: <span id="total-price">0</span>đ</p>
-                <button class="checkout-btn">Thanh toán</button>
-              </div>
-            </div>
-          </div>
-          <!-- Theme button -->
           <i class="ri-moon-line change-theme" id="theme-button"></i>
-          <!-- Toggle button -->
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-apps-2-line"></i>
           </div>
         </div>
       </nav>
     </header>
+    <!--==================== CART MODAL ====================-->
+    <div id="cart-modal" class="cart-modal" style="display: none">
+      <div class="cart-modal__content">
+        <div class="cart-modal__header">
+          <h3>Giỏ hàng của bạn</h3>
+          <i
+            class="ri-close-line"
+            onclick="toggleCart()"
+            style="cursor: pointer"
+          ></i>
+        </div>
 
+        <div id="cart-items-container" class="cart-modal__body"></div>
+
+        <div class="cart-modal__footer">
+          <div class="total-box">
+            <span>Tổng cộng:</span>
+            <span id="total-price">0</span> VND
+          </div>
+          <button class="checkout-btn">Thanh toán ngay</button>
+        </div>
+      </div>
+    </div>
     <!--==================== MAIN ====================-->
     <main class="main">
       <!--==================== HOME ====================-->
@@ -108,7 +106,7 @@
               giải trí vừa tự hào về cội nguồn dân tộc.
             </p>
 
-            <a href="#" class="button"> Đặt hàng ngay </a>
+            <a href="#popular" class="button"> Đặt hàng ngay </a>
           </div>
 
           <img src="img/header.jpg" alt="image" class="home__img" />
@@ -206,22 +204,32 @@
         <div class="popular__container container grid">
           <article class="popular__card">
             <div class="popular__bg"></div>
-            <img src="img/popular-1.png" alt="image" class="popular__img" />
+            <img src="img/popular-1.png" alt="" class="popular__img" />
             <h3 class="popular__title">Hộp thẻ bài</h3>
             <span class="popular__subtitle">Thường</span>
-            <h3 class="popular__price">49.000 VND</h3>
-            <button class="popular__button button">
+            <h3 class="popular__price" data-price="49000">49.000 VND</h3>
+
+            <button
+              class="popular__button button"
+              data-id="sp01"
+              data-name="Hộp thẻ bài"
+            >
               <i class="ri-add-line"></i>
             </button>
           </article>
 
           <article class="popular__card">
             <div class="popular__bg"></div>
-            <img src="img/popular-2.png" alt="image" class="popular__img" />
+            <img src="img/popular-2.png" alt="" class="popular__img" />
             <h3 class="popular__title">Thùng sự kiện</h3>
             <span class="popular__subtitle">Cao cấp</span>
-            <h3 class="popular__price">1.499.000 VND</h3>
-            <button class="popular__button button">
+            <h3 class="popular__price" data-price="1499000">1.499.000 VND</h3>
+
+            <button
+              class="popular__button button"
+              data-id="sp02"
+              data-name="Thùng sự kiện"
+            >
               <i class="ri-add-line"></i>
             </button>
           </article>
@@ -231,8 +239,12 @@
             <img src="img/popular-3.png" alt="image" class="popular__img" />
             <h3 class="popular__title">Hộp Board Game</h3>
             <span class="popular__subtitle">Thường</span>
-            <h3 class="popular__price">349.000 VND</h3>
-            <button class="popular__button button">
+            <h3 class="popular__price" data-price="1499000">1.499.000 VND</h3>
+            <button
+              class="popular__button button"
+              data-id="sp03"
+              data-name="Hộp Board Game"
+            >
               <i class="ri-add-line"></i>
             </button>
           </article>
@@ -242,8 +254,12 @@
             <img src="img/popular-4.png" alt="image" class="popular__img" />
             <h3 class="popular__title">Hộp bự</h3>
             <span class="popular__subtitle">Cao cấp</span>
-            <h3 class="popular__price">899.000 VND</h3>
-            <button class="popular__button button">
+            <h3 class="popular__price" data-price="899000">899.000 VND</h3>
+            <button
+              class="popular__button button"
+              data-id="sp04"
+              data-name="Hộp bự"
+            >
               <i class="ri-add-line"></i>
             </button>
           </article>
@@ -253,8 +269,12 @@
             <img src="img/popular-5.png" alt="image" class="popular__img" />
             <h3 class="popular__title">Combo</h3>
             <span class="popular__subtitle">Combo Thường</span>
-            <h3 class="popular__price">1.999.000 VND</h3>
-            <button class="popular__button button">
+            <h3 class="popular__price" data-price="1999000">1.999.000 VND</h3>
+            <button
+              class="popular__button button"
+              data-id="sp05"
+              data-name="Combo"
+            >
               <i class="ri-add-line"></i>
             </button>
           </article>
@@ -263,9 +283,13 @@
             <div class="popular__bg"></div>
             <img src="img/popular-6.png" alt="image" class="popular__img" />
             <h3 class="popular__title">Combo bự</h3>
-            <span class="popular__subtitle">ComboCao cấp</span>
-            <h3 class="popular__price">1.799.000 VND</h3>
-            <button class="popular__button button">
+            <span class="popular__subtitle">Combo Cao cấp</span>
+            <h3 class="popular__price" data-price="1799000">1.799.000 VND</h3>
+            <button
+              class="popular__button button"
+              data-id="sp06"
+              data-name="Combo bự"
+            >
               <i class="ri-add-line"></i>
             </button>
           </article>
