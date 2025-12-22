@@ -247,3 +247,104 @@ window.goToCheckout = function () {
   }
   window.location.href = "checkout.html";
 };
+
+/*=============== PRODUCT DETAIL MODAL ===============*/
+
+const productCards = document.querySelectorAll(".popular__card");
+const modal = document.getElementById("productModal");
+const closeBtn = document.querySelector(".modal-close");
+
+// Hàm mở Modal
+function openProductDetail(card) {
+  const img = card.querySelector(".popular__img").src;
+  const title = card.querySelector(".popular__title").innerText;
+  const subtitle = card.querySelector(".popular__subtitle").innerText;
+  const priceText = card.querySelector(".popular__price").innerText;
+
+  // Lấy data từ nút bấm bên trong card
+  const btn = card.querySelector(".popular__button");
+  const desc = btn.getAttribute("data-description");
+
+  // Đổ dữ liệu vào modal
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalSubtitle").innerText = subtitle;
+  document.getElementById("modalPrice").innerText = priceText;
+  document.getElementById("modalDesc").innerText = desc;
+
+  modal.style.display = "block";
+}
+
+// Lắng nghe click vào toàn bộ card
+productCards.forEach((card) => {
+  card.addEventListener("click", (e) => {
+    // Nếu click trúng nút "+" thì không mở Modal (để thực hiện hàm thêm vào giỏ)
+    if (e.target.closest(".popular__button")) return;
+
+    openProductDetail(card);
+  });
+});
+
+// Đóng modal
+closeBtn.onclick = () => (modal.style.display = "none");
+window.onclick = (e) => {
+  if (e.target == modal) modal.style.display = "none";
+};
+
+/*=============== CHECKOUT PAGE SCRIPTS ===============*/
+// Biến tạm để lưu sản phẩm đang xem trong Modal
+let currentProductInModal = null;
+
+// Hàm này được gọi khi bạn ấn vào thẻ sản phẩm để xem chi tiết
+function openProductDetail(card) {
+  const btn = card.querySelector(".popular__button");
+
+  // Lưu thông tin sản phẩm vào biến tạm
+  currentProductInModal = {
+    id: btn.dataset.id,
+    name: btn.dataset.name,
+    price: parseInt(card.querySelector(".popular__price").dataset.price),
+    img: card.querySelector(".popular__img").src,
+    quantity: 1,
+  };
+
+  // Đổ dữ liệu vào giao diện Modal (như bạn đã làm)
+  document.getElementById("modalImg").src = currentProductInModal.img;
+  document.getElementById("modalTitle").innerText = currentProductInModal.name;
+  document.getElementById("modalPrice").innerText =
+    currentProductInModal.price.toLocaleString() + " VND";
+  document.getElementById("modalDesc").innerText =
+    btn.getAttribute("data-description");
+
+  document.getElementById("productModal").style.display = "block";
+}
+
+// LẮNG NGHE SỰ KIỆN CHO NÚT "THÊM VÀO GIỎ HÀNG" LỚN TRONG MODAL
+const modalAddBtn = document.getElementById("modal-add-btn");
+if (modalAddBtn) {
+  modalAddBtn.addEventListener("click", () => {
+    if (currentProductInModal) {
+      // 1. Gọi hàm thêm vào giỏ hàng (hàm bạn đã viết sẵn)
+      addToCart(currentProductInModal);
+
+      // 2. Hiệu ứng phản hồi trên nút
+      const originalText = modalAddBtn.innerText;
+      modalAddBtn.innerText = "✓ Đã thêm vào giỏ";
+      modalAddBtn.style.backgroundColor = "#28a745"; // Đổi sang xanh lá
+
+      // 3. Hiệu ứng bay (Lấy ảnh từ Modal bay về giỏ hàng trên Nav)
+      const modalImg = document.getElementById("modalImg");
+      const cartIconNav = document.querySelector("#cart-icon-nav");
+      if (modalImg && cartIconNav) {
+        flyToCart(modalImg, cartIconNav);
+      }
+
+      // 4. Trả lại trạng thái nút sau 1 giây và đóng modal (tùy chọn)
+      setTimeout(() => {
+        modalAddBtn.innerText = originalText;
+        modalAddBtn.style.backgroundColor = "";
+        // toggleCartDetail(); // Đóng modal nếu muốn
+      }, 1000);
+    }
+  });
+}

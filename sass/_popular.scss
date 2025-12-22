@@ -79,3 +79,105 @@
     transform: translateY(-0.3rem);
   }
 }
+.product-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  backdrop-filter: blur(8px);
+}
+
+.modal-container {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  margin: 5% auto;
+  border-radius: 2rem;
+  padding: 3rem;
+  position: relative;
+  animation: modalIn 0.4s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #790000;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-img-box img {
+  width: 100%;
+  border-radius: 1.5rem;
+}
+.modal-sub {
+  color: #888;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#modalTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #dfa30b;
+}
+#modalPrice {
+  color: $first-color;
+  margin: 1rem 0;
+}
+#modalDesc {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: hsl(140, 4%, 12%);
+}
+.popular__button-large {
+  width: 100%;
+  padding: 1.25rem;
+  background-color: #800000; /* Màu đỏ thẫm Kỷ Việt */
+  color: #fff;
+  border: none;
+  border-radius: 5rem; /* Tạo hình viên thuốc như ảnh */
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1.5rem;
+}
+
+.popular__button-large:hover {
+  background-color: #a00000;
+  transform: scale(1.02);
+}
+
+.popular__button-large:active {
+  transform: scale(0.98);
+}
