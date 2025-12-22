@@ -8,6 +8,7 @@ body.dark-theme {
   $container-color: hsl(0, 0%, 14%);
   $shadow-img: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.6));
   $filter-img: initial;
+  $footer-bg-color: #790000;
 
   /*========= Global styles =========*/
   background-color: $body-color;
@@ -120,15 +121,17 @@ body.dark-theme {
       color: $title-color;
     }
     &__link {
-      color: $text-color;
+      color: hsl(140, 4%, 12%);
       &:hover {
-        color: $first-color;
+        color: #790000;
       }
     }
     &__social-link {
-      color: $first-color;
+      color: #790000;
     }
-
+    &__title {
+      color: #790000;
+    }
     &__fruit,
     &__branch-1,
     &__branch-2 {

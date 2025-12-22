@@ -24,6 +24,9 @@
     font-size: $small-font-size;
     margin-top: 1rem;
   }
+  &__text {
+    color: $first-color;
+  }
   &__bg {
     position: absolute;
     width: 100%;

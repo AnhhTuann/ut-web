@@ -1,6 +1,7 @@
 .footer {
   padding-block: 3rem 2rem;
   overflow: hidden;
+  background-color: #dfa30b;
   &__container {
     position: relative;
     row-gap: 3rem;
@@ -18,7 +19,9 @@
       padding-right: 10px;
     }
   }
-
+  &__info {
+    color: $title-color;
+  }
   &__data {
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -28,13 +31,14 @@
     font-size: $h3-font-size;
     font-weight: $font-semi-bold;
     margin-bottom: 1rem;
+    color: $first-color;
   }
   &__links {
     display: grid;
     row-gap: 0.75rem;
   }
   &__link {
-    color: $text-color;
+    color: $title-color;
     transition: color 0.4s;
     &:hover {
       color: $first-color;
@@ -63,23 +67,11 @@
     bottom: -2rem;
     right: 2rem;
   }
-  &__branch-1 {
-    width: 120px;
-    right: -3rem;
-    top: 0;
-    rotate: -90deg;
-  }
-  &__branch-2 {
-    width: 120px;
-    left: -5rem;
-    bottom: -10rem;
-    rotate: 75deg;
-  }
+
   &__copy {
     display: block;
-    margin-top: 7rem;
     text-align: center;
     font-size: $small-font-size;
-    color: $text-color-light;
+    color: $title-color;
   }
 }
