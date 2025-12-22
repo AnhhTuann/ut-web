@@ -109,3 +109,39 @@ sr.reveal(`.home__img`, { origin: "bottom" });
 sr.reveal(`.enjoy__card , .popular__card`, { interval: 100 });
 sr.reveal(`.about__data`, { origin: "right" });
 sr.reveal(`.about__img`, { origin: "left" });
+
+/*=============== Add to Fly ===============*/
+function flyToCart(buttonElement) {
+  const cartIcon = document.querySelector(".cart-icon-container");
+  const productImg = buttonElement.parentElement.querySelector(".product-img");
+
+  // Tạo một bản sao của ảnh sản phẩm
+  const flyingImg = productImg.cloneNode();
+  flyingImg.classList.add("fly-item");
+  document.body.appendChild(flyingImg);
+
+  // Lấy vị trí của ảnh gốc và giỏ hàng
+  const rect = productImg.getBoundingClientRect();
+  const cartRect = cartIcon.getBoundingClientRect();
+
+  // Đặt vị trí ban đầu cho ảnh bay
+  flyingImg.style.left = `${rect.left}px`;
+  flyingImg.style.top = `${rect.top}px`;
+
+  // Thực hiện bay sau 10ms (để trình duyệt kịp nhận vị trí đầu)
+  setTimeout(() => {
+    flyingImg.style.left = `${cartRect.left + 15}px`;
+    flyingImg.style.top = `${cartRect.top + 15}px`;
+    flyingImg.style.width = `10px`;
+    flyingImg.style.height = `10px`;
+    flyingImg.style.opacity = `0.5`;
+  }, 10);
+
+  // Xóa ảnh sau khi bay xong
+  setTimeout(() => {
+    flyingImg.remove();
+    // Hiệu ứng rung nhẹ cho giỏ hàng
+    cartIcon.style.transform = "scale(1.2)";
+    setTimeout(() => (cartIcon.style.transform = "scale(1)"), 200);
+  }, 800);
+}
