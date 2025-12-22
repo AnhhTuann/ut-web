@@ -36,6 +36,9 @@
     font-size: $h2-font-size;
     font-family: $second-font;
     margin-bottom: 0.25rem;
+    span {
+      font-size: $small-font-size;
+    }
   }
   &__subtitle {
     display: block;
