@@ -656,7 +656,7 @@ body {
   row-gap: 3rem;
 }
 .footer__logo {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   column-gap: 0.25rem;
   font-size: 2rem;
@@ -673,8 +673,8 @@ body {
 }
 .footer__data {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  row-gap: 2.5rem;
 }
 .footer__title {
   font-size: 1.5rem;
@@ -719,6 +719,7 @@ body {
   text-align: center;
   font-size: 1rem;
   color: hsl(140, 4%, 12%);
+  margin-top: 1.5rem;
 }
 
 body.dark-theme {
@@ -859,12 +860,13 @@ body.dark-theme .scrollup {
   background-color: hsl(0, 0%, 40%);
 }
 
-@media screen and (max-width: 300px) {
+/* ================= SMALL SCREENS (max-width: 300px) ================= */
+@media screen and (max-width: 320px) {
   .container {
     margin-inline: 1rem;
   }
   .home__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .home__fruit {
     top: 5.5rem;
@@ -873,14 +875,13 @@ body.dark-theme .scrollup {
     right: -4rem;
   }
   .mission__container {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 1.5rem;
   }
-  .enjoy__container {
-    grid-template-columns: 220px;
-  }
+  .enjoy__container,
   .popular__container {
-    grid-template-columns: 220px;
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
   .about__branch {
     bottom: 12rem;
@@ -889,29 +890,27 @@ body.dark-theme .scrollup {
     padding: 2rem 1rem;
   }
   .footer__data {
-    grid-template-columns: max-content;
-    gap: 2rem;
+    /* Chuyển về 1 cột duy nhất để không bị tràn */
+    grid-template-columns: 1fr;
   }
 }
+/* ================= MEDIUM SCREENS (min-width: 576px) ================= */
 @media screen and (min-width: 576px) {
-  .home__container {
-    grid-template-columns: 370px;
-    justify-content: center;
-  }
+  .home__container,
   .about__container {
-    grid-template-columns: 370px;
+    grid-template-columns: 400px;
     justify-content: center;
   }
   .mission__container {
-    flex-direction: row;
-    gap: 4rem;
+    flex-direction: column !important;
+    gap: 3rem;
   }
   .join__description {
     width: 350px;
     margin: 0 auto;
   }
   .join__form {
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--body-color);
     padding: 0.5rem;
     border-radius: 4rem;
     grid-template-columns: 1fr max-content;
@@ -921,12 +920,14 @@ body.dark-theme .scrollup {
     padding: 1.25rem 1rem;
   }
   .footer__data {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
   }
 }
+/* ================= TABLETS (min-width: 768px) ================= */
 @media screen and (min-width: 768px) {
   .home__container {
-    grid-template-columns: repeat(2, 350px);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
   .home__data {
@@ -936,37 +937,46 @@ body.dark-theme .scrollup {
     left: 10rem;
   }
   .mission__container {
-    gap: 6rem;
+    flex-direction: row !important;
+    gap: 5rem;
   }
-  .enjoy__container {
+  .enjoy__container,
+  .popular__container {
     grid-template-columns: repeat(2, 250px);
+    justify-content: center;
   }
   .about__container {
-    grid-template-columns: repeat(2, 350px);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
   .about__img {
     order: -1;
   }
-  .home__data,
-  .about__data,
-  .about__data .section__title {
+  .about__data, .about__data .section__title {
     text-align: initial;
   }
-  .popular__container {
-    grid-template-columns: repeat(2, 250px);
-  }
   .join__form {
-    width: 600px;
+    width: 500px;
     justify-self: center;
   }
   .footer__data {
     grid-template-columns: repeat(4, max-content);
+    column-gap: 3rem;
   }
 }
+/* ================= LARGE SCREENS (min-width: 1150px) ================= */
 @media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 5.5rem;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
   .section__title {
-    font-size: 3rem;
+    font-size: var(--big-font-size);
   }
   .container {
     margin-inline: auto;
@@ -975,14 +985,14 @@ body.dark-theme .scrollup {
     padding-block: 7rem 2rem;
   }
   .nav {
-    height: c alc(5.5rem);
+    height: calc(var(--header-height) + 2rem);
     column-gap: 4rem;
   }
   .nav__close, .nav__toggle, .nav__img-1, .nav__img-2 {
     display: none;
   }
   .nav__logo {
-    font-size: 1.25rem;
+    font-size: var(--h3-font-size);
   }
   .nav__menu {
     margin-left: auto;
@@ -1002,7 +1012,7 @@ body.dark-theme .scrollup {
   }
   .home__title {
     margin-bottom: 1.5rem;
-    font-size: 5.5rem;
+    font-size: var(--biggest-font-size);
   }
   .home__description {
     padding-right: 5rem;
@@ -1024,10 +1034,10 @@ body.dark-theme .scrollup {
     padding-block: 1.5rem 3rem;
   }
   .enjoy__title {
-    font-size: calc(1.5rem + 4px);
+    font-size: calc(var(--h2-font-size) + 4px);
   }
   .enjoy__subtitle {
-    font-size: 1rem;
+    font-size: var(--normal-font-size);
   }
   .enjoy__img {
     width: 150px;
@@ -1061,20 +1071,18 @@ body.dark-theme .scrollup {
   .popular__card {
     padding-block: 8rem 3rem;
   }
-  .popular__title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .popular__subtitle {
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-  }
   .popular__img {
     width: 180px;
   }
-  .popular__button {
-    right: 1.5rem;
-    bottom: 1.5rem;
+  .mission__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: row;
   }
   .join__content {
     padding-block: 4rem;
@@ -1089,46 +1097,12 @@ body.dark-theme .scrollup {
   .join__leaf-2 {
     right: 6rem;
   }
-  .footer {
-    position: relative;
-    padding-block: 5rem 3rem;
-  }
   .footer__container {
-    position: initial;
-    grid-template-columns: repeat(2, max-content);
+    /* Logo một bên, Data một bên */
     justify-content: space-between;
-  }
-  .footer__logo {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
   }
   .footer__data {
     column-gap: 4.5rem;
-  }
-  .footer__title {
-    margin-bottom: 1.5rem;
-    font-size: 1.25rem;
-  }
-  .footer__social {
-    column-gap: 1.25rem;
-  }
-  .footer__social-link {
-    font-size: 1.5rem;
-  }
-  .footer__fruit {
-    width: 70px;
-    bottom: 5rem;
-    right: 35%;
-  }
-  .footer__branch-1 {
-    width: 200px;
-    top: 7rem;
-    right: -2rem;
-  }
-  .footer__branch-2 {
-    width: 200px;
-    left: 20%;
-    bottom: -4rem;
   }
   .scrollup {
     right: 3rem;
@@ -1148,6 +1122,7 @@ body.dark-theme .scrollup {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  flex-direction: column;
 }
 .mission__title {
   font-size: 2rem;

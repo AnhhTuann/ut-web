@@ -1,11 +1,12 @@
-// Small screen styles
-@media screen and (max-width: 300px) {
+/* ================= SMALL SCREENS (max-width: 300px) ================= */
+@media screen and (max-width: 320px) {
   .container {
     margin-inline: 1rem;
   }
+
   .home {
     &__title {
-      font-size: 2.5rem;
+      font-size: 2rem; // Giảm nhẹ để không bị tràn màn hình quá nhỏ
     }
     &__fruit {
       top: 5.5rem;
@@ -17,19 +18,16 @@
 
   .mission {
     &__container {
-      flex-direction: column;
+      flex-direction: column !important;
       gap: 1.5rem;
     }
   }
 
-  .enjoy {
-    &__container {
-      grid-template-columns: 220px;
-    }
-  }
+  .enjoy,
   .popular {
     &__container {
-      grid-template-columns: 220px;
+      grid-template-columns: 1fr; // Thay vì cố định 220px, dùng 1fr để linh hoạt hơn
+      justify-content: center;
     }
   }
 
@@ -47,31 +45,24 @@
 
   .footer {
     &__data {
-      grid-template-columns: max-content;
-      gap: 2rem;
+      /* Chuyển về 1 cột duy nhất để không bị tràn */
+      grid-template-columns: 1fr; // Tùy chọn: căn giữa cho đẹp trên mobile
     }
   }
 }
 
-// Medium screen styles
+/* ================= MEDIUM SCREENS (min-width: 576px) ================= */
 @media screen and (min-width: 576px) {
-  .home {
-    &__container {
-      grid-template-columns: 370px;
-      justify-content: center;
-    }
-  }
-  .about {
-    &__container {
-      grid-template-columns: 370px;
-      justify-content: center;
-    }
+  .home__container,
+  .about__container {
+    grid-template-columns: 400px;
+    justify-content: center;
   }
 
   .mission {
     &__container {
-      flex-direction: row;
-      gap: 4rem;
+      flex-direction: column !important;
+      gap: 3rem;
     }
   }
 
@@ -81,7 +72,7 @@
       margin: 0 auto;
     }
     &__form {
-      background-color: $body-color;
+      background-color: var(--body-color); // Sử dụng biến CSS hoặc $body-color
       padding: 0.5rem;
       border-radius: 4rem;
       grid-template-columns: 1fr max-content;
@@ -91,23 +82,25 @@
       padding: 1.25rem 1rem;
     }
   }
+
   .footer {
     &__data {
-      grid-template-columns: repeat(3, max-content);
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
     }
   }
 }
 
+/* ================= TABLETS (min-width: 768px) ================= */
 @media screen and (min-width: 768px) {
   .home {
     &__container {
-      grid-template-columns: repeat(2, 350px);
+      grid-template-columns: repeat(2, 1fr);
       align-items: center;
     }
     &__data {
       text-align: initial;
     }
-
     &__fruit {
       left: 10rem;
     }
@@ -115,40 +108,34 @@
 
   .mission {
     &__container {
-      gap: 6rem;
+      flex-direction: row !important;
+      gap: 5rem;
     }
   }
 
-  .enjoy {
-    &__container {
-      grid-template-columns: repeat(2, 250px);
-    }
+  .enjoy__container,
+  .popular__container {
+    grid-template-columns: repeat(2, 250px);
+    justify-content: center;
   }
 
   .about {
     &__container {
-      grid-template-columns: repeat(2, 350px);
+      grid-template-columns: repeat(2, 1fr);
       align-items: center;
     }
     &__img {
       order: -1;
     }
-  }
-  .home__data,
-  .about__data,
-  .about__data .section__title {
-    text-align: initial;
-  }
-
-  .popular {
-    &__container {
-      grid-template-columns: repeat(2, 250px);
+    &__data,
+    &__data .section__title {
+      text-align: initial;
     }
   }
 
   .join {
     &__form {
-      width: 600px;
+      width: 500px;
       justify-self: center;
     }
   }
@@ -156,22 +143,28 @@
   .footer {
     &__data {
       grid-template-columns: repeat(4, max-content);
+      column-gap: 3rem;
     }
   }
 }
 
-// Large screen styles
+/* ================= LARGE SCREENS (min-width: 1150px) ================= */
 @media screen and (min-width: 1150px) {
-  $biggest-font-size: 5.5rem;
-  $big-font-size: 3rem;
-  $h1-font-size: 2.25rem;
-  $h2-font-size: 1.5rem;
-  $h3-font-size: 1.25rem;
-  $normal-font-size: 1rem;
-  $small-font-size: 0.875rem;
-  .section__title {
-    font-size: $big-font-size;
+  // Định nghĩa lại các biến font size cho màn hình lớn
+  :root {
+    --biggest-font-size: 5.5rem;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
   }
+
+  .section__title {
+    font-size: var(--big-font-size);
+  }
+
   .container {
     margin-inline: auto;
   }
@@ -181,8 +174,9 @@
   }
 
   .nav {
-    height: c alc($header-height + 2rem);
+    height: calc(var(--header-height) + 2rem); // Đã sửa lỗi c alc
     column-gap: 4rem;
+
     &__close,
     &__toggle,
     &__img-1,
@@ -190,7 +184,7 @@
       display: none;
     }
     &__logo {
-      font-size: $h3-font-size;
+      font-size: var(--h3-font-size);
     }
     &__menu {
       margin-left: auto;
@@ -213,7 +207,7 @@
     }
     &__title {
       margin-bottom: 1.5rem;
-      font-size: $biggest-font-size;
+      font-size: var(--biggest-font-size);
     }
     &__description {
       padding-right: 5rem;
@@ -238,10 +232,10 @@
       padding-block: 1.5rem 3rem;
     }
     &__title {
-      font-size: calc($h2-font-size + 4px);
+      font-size: calc(var(--h2-font-size) + 4px);
     }
     &__subtitle {
-      font-size: $normal-font-size;
+      font-size: var(--normal-font-size);
     }
     &__img {
       width: 150px;
@@ -281,20 +275,21 @@
     &__card {
       padding-block: 8rem 3rem;
     }
-    &__title {
-      font-size: $h2-font-size;
-      margin-bottom: 0.5rem;
-    }
-    &__subtitle {
-      font-size: $small-font-size;
-      margin-bottom: 1rem;
-    }
     &__img {
       width: 180px;
     }
-    &__button {
-      right: 1.5rem;
-      bottom: 1.5rem;
+  }
+
+  .mission {
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-direction: row;
     }
   }
 
@@ -316,44 +311,13 @@
   }
 
   .footer {
-    position: relative;
-    padding-block: 5rem 3rem;
     &__container {
-      position: initial;
-      grid-template-columns: repeat(2, max-content);
+      /* Logo một bên, Data một bên */
       justify-content: space-between;
     }
-    &__logo {
-      font-size: $h2-font-size;
-      margin-bottom: 1.5rem;
-    }
+
     &__data {
       column-gap: 4.5rem;
-    }
-    &__title {
-      margin-bottom: 1.5rem;
-      font-size: $h3-font-size;
-    }
-    &__social {
-      column-gap: 1.25rem;
-      &-link {
-        font-size: 1.5rem;
-      }
-    }
-    &__fruit {
-      width: 70px;
-      bottom: 5rem;
-      right: 35%;
-    }
-    &__branch-1 {
-      width: 200px;
-      top: 7rem;
-      right: -2rem;
-    }
-    &__branch-2 {
-      width: 200px;
-      left: 20%;
-      bottom: -4rem;
     }
   }
 
