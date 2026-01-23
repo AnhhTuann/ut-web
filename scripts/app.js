@@ -48,7 +48,7 @@ const scrollActive = () => {
       sectionTop = current.offsetTop - 58,
       sectionId = current.getAttribute("id"),
       sectionsClass = document.querySelector(
-        ".nav__menu a[href*=" + sectionId + "]"
+        ".nav__menu a[href*=" + sectionId + "]",
       );
 
     if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
@@ -79,10 +79,10 @@ const getCurrentIcon = () =>
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
+    darkTheme,
   );
   themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](
-    iconTheme
+    iconTheme,
   );
 }
 
@@ -198,13 +198,13 @@ function renderCartItems() {
             <span>${(item.price * item.quantity).toLocaleString()} VND</span>
             <button onclick="removeItem(${index})" style="color:red; border:none; background:none; cursor:pointer;">Xóa</button>
         </div>
-    `
+    `,
     )
     .join("");
 
   const totalMoney = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
   document.getElementById("total-price").innerText =
     totalMoney.toLocaleString();
@@ -225,7 +225,7 @@ window.addEventListener("scroll", () => {
       sectionTop = current.offsetTop - 58,
       sectionId = current.getAttribute("id"),
       sectionsClass = document.querySelector(
-        '.nav__menu a[href*="' + sectionId + '"]'
+        '.nav__menu a[href*="' + sectionId + '"]',
       );
 
     if (sectionsClass) {
@@ -254,27 +254,6 @@ const productCards = document.querySelectorAll(".popular__card");
 const modal = document.getElementById("productModal");
 const closeBtn = document.querySelector(".modal-close");
 
-// Hàm mở Modal
-function openProductDetail(card) {
-  const img = card.querySelector(".popular__img").src;
-  const title = card.querySelector(".popular__title").innerText;
-  const subtitle = card.querySelector(".popular__subtitle").innerText;
-  const priceText = card.querySelector(".popular__price").innerText;
-
-  // Lấy data từ nút bấm bên trong card
-  const btn = card.querySelector(".popular__button");
-  const desc = btn.getAttribute("data-description");
-
-  // Đổ dữ liệu vào modal
-  document.getElementById("modalImg").src = img;
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalSubtitle").innerText = subtitle;
-  document.getElementById("modalPrice").innerText = priceText;
-  document.getElementById("modalDesc").innerText = desc;
-
-  modal.style.display = "block";
-}
-
 // Lắng nghe click vào toàn bộ card
 productCards.forEach((card) => {
   card.addEventListener("click", (e) => {
@@ -298,6 +277,7 @@ let currentProductInModal = null;
 // Hàm này được gọi khi bạn ấn vào thẻ sản phẩm để xem chi tiết
 function openProductDetail(card) {
   const btn = card.querySelector(".popular__button");
+  const subtitle = card.querySelector(".popular__subtitle").innerText;
 
   // Lưu thông tin sản phẩm vào biến tạm
   currentProductInModal = {
@@ -311,6 +291,7 @@ function openProductDetail(card) {
   // Đổ dữ liệu vào giao diện Modal (như bạn đã làm)
   document.getElementById("modalImg").src = currentProductInModal.img;
   document.getElementById("modalTitle").innerText = currentProductInModal.name;
+  document.getElementById("modalSubtitle").innerText = subtitle;
   document.getElementById("modalPrice").innerText =
     currentProductInModal.price.toLocaleString() + " VND";
   document.getElementById("modalDesc").innerText =
